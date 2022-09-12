@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div>
+                <a href="index.html"><img src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg" alt=""></a>
+                <a href="#">Movies</a>
+                <a href="#">Sports</a>
+                <a href="#">Disney+</a>
+                <a style="color:#FFAA05; font-weight:700;" href="#">Kids</a>
+            </div>
+            <div>
+                <input type="text" name="" id="search" placeholder="Search Movies" oninput="debounce(mainSearch, 1000)">
+                
+                <div id="searchData">
+                    <p>X</p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="slideshow">
+        </div>
+        <h1>Trending Now</h1>
+        <div id="movies">
+            <!--Show list of movies here-->
+        </div>
+
+        <div id="overlay">
+        <div id="popup">
+            <p>X</p>
+            <div id="box"></div>
+        </div>
+    </div>
+    </body>
+<script src="index.js"></script>
+</html>
