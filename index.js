@@ -1,16 +1,30 @@
 
 // main js --------------- 
+var url = "https://api.themoviedb.org/3/trending/movie/day?api_key=10f696d14d2328d42fbb98c53b1343c3";
+var interval;
+
+const handleClick = (q)=>{
+    clearInterval(interval)
+    if(q ==`movie`){ 
+        document.querySelector(".movie").style.textDecoration = "underline" 
+         document.querySelector(".tv").style.textDecoration = "none"
+    } else {
+        document.querySelector(".tv").style.textDecoration = "underline"
+        document.querySelector(".movie").style.textDecoration = "none"
+    }
+     url = `https://api.themoviedb.org/3/trending/${q}/day?api_key=10f696d14d2328d42fbb98c53b1343c3`;
+     getdata();
+}
+
+
 getdata();
-
-
 function getdata() {
-    let url = `https://api.themoviedb.org/3/trending/all/day?api_key=10f696d14d2328d42fbb98c53b1343c3`;
+    // let url = `https://api.themoviedb.org/3/trending/tv/day?api_key=10f696d14d2328d42fbb98c53b1343c3`;
     fetch(url)
         .then(function (res) {
             return res.json();
         })
         .then(function (res) {
-            console.log(res);
             append(res.results);
             // moviesArr = res.Search
             slideshow(res.results);
@@ -44,12 +58,12 @@ function append(movies) {
 
 
 function slideshow(movies) {
-
+    window.clearInterval();
     let main = document.querySelector("#slideshow");
 
     let i = 0;
 
-    setInterval(function () {
+    interval = setInterval(function () {
         if (i > 4) i = 0;
         let img = document.createElement("img");
         img.src = `https://image.tmdb.org/t/p/w500/${movies[i].backdrop_path}`;
