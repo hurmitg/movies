@@ -1,6 +1,6 @@
 
 // main js --------------- 
-var url = "https://api.themoviedb.org/3/trending/movie/day?api_key=10f696d14d2328d42fbb98c53b1343c3";
+var url = "https://api.themoviedb.org/3/trending/all/day?api_key=10f696d14d2328d42fbb98c53b1343c3";
 var interval;
 
 const handleClick = (q)=>{
