@@ -46,6 +46,7 @@ body{
     text-decoration: none;
     font-weight: 300;
     align-self: center;
+    cursor: pointer;
 }
 #navbar>div:last-child{
     display: flex;
